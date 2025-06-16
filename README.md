@@ -1,6 +1,6 @@
-# 🛡️ Enterprise-Grade Web Traffic Blocking using AWS WAF
+#  Enterprise-Grade Web Traffic Blocking using AWS WAF
 
-## 🎯 Objective
+##  Objective
 
 To design and implement a secure, scalable, and enterprise-grade web traffic protection system using **AWS Web Application Firewall (WAF)**.  
 This project demonstrates dynamic threat detection and mitigation through **managed rule sets**, **custom rules**, and **geo/IP filtering**, integrated with a real-time web architecture using **EC2 and Application Load Balancer (ALB)**.  
@@ -8,9 +8,9 @@ By simulating common cyber-attacks such as **SQL injection** and **query string 
 
 ---
 
-## 🧪 Steps
+##  Steps
 
-### 🔹 Step 1: Launch EC2 Instances to Host Websites
+###  Step 1: Launch EC2 Instances to Host Websites
 
 1. Go to **EC2 → Security Groups**  
    - Create a new security group allowing **SSH (port 22)** and **HTTP (port 80)**
@@ -25,7 +25,7 @@ By simulating common cyber-attacks such as **SQL injection** and **query string 
 ![](images/s2.1.png)
 ---
 
-### 🔹 Step 2: Create Target Group & Application Load Balancer (ALB)
+###  Step 2: Create Target Group & Application Load Balancer (ALB)
 
 1. Go to **EC2 → Target Groups**
    - Target type: `Instances`
@@ -49,9 +49,9 @@ By simulating common cyber-attacks such as **SQL injection** and **query string 
 
 ---
 
-### 🔹 Step 3: Check for Vulnerabilities – SQL Injection & Query String
+###  Step 3: Check for Vulnerabilities – SQL Injection & Query String
 
-#### 🔸 SQL Injection Test
+####  SQL Injection Test
 - Open your Application Load Balancer (ALB) DNS in the browser and append the following string:
 - To check SQL Injection, we add “/product?item=securitynumber’+OR+1=1--” to our ALB DNS.
 - After entering we can see that its coming “Not Found” which indicates that our ALB is vulnerable to SQL Injection because it should come “403 Forbidden” in Safe case.
@@ -59,7 +59,7 @@ By simulating common cyber-attacks such as **SQL injection** and **query string 
 ![](images/4.1.png)
 
 
-#### 🔸To check Query String, we add “/?admin=12345” to our ALB DNS.
+#### To check Query String, we add “/?admin=12345” to our ALB DNS.
 
 ![](images/4.2.png)
 
