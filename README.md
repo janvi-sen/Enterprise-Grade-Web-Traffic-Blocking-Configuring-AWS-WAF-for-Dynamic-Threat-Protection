@@ -55,9 +55,11 @@ By simulating common cyber-attacks such as **SQL injection** and **query string 
 - Open your Application Load Balancer (ALB) DNS in the browser and append the following string:
 - To check SQL Injection, we add “/product?item=securitynumber’+OR+1=1--” to our ALB DNS.
 - After entering we can see that its coming “Not Found” which indicates that our ALB is vulnerable to SQL Injection because it should come “403 Forbidden” in Safe case.
-![](images/s4.1.png)
+  
+![](images/4.1.png)
 
 
 #### 🔸To check Query String, we add “/?admin=12345” to our ALB DNS.
-![](images/s4.2.png)
+
+![](images/4.2.png)
 
